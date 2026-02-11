@@ -4,11 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Spray Water Park & Resort | Water Park, Banquet Hall & Party Lawn in Jaipur</title>
+<title>Spray Water Park & Resort | Jaipur</title>
 
-<meta name="description" content="Spray Water Park & Resort in Jagatpura Jaipur offers Water Park fun, Banquet Hall for 300 guests, Party Lawn for 1500 guests. Free Buffet Dinner & Upto 20% Discount.">
-<meta name="keywords" content="Water Park Jaipur, Banquet Hall Jaipur, Party Lawn Jaipur, Spray Water Park">
-<meta name="author" content="Spray Water Park">
+<meta name="description" content="Spray Water Park & Resort Jaipur – Water Park, Banquet Hall & Party Lawn. Free Food & Upto 20% Discount.">
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
@@ -30,10 +28,10 @@ display:flex;
 justify-content:space-between;
 align-items:center;
 padding:18px 40px;
-background:rgba(0,0,40,0.9);
+background:rgba(0,0,40,0.85);
 z-index:1000;
 }
-nav h2{color:#ffd700;font-weight:700;}
+nav h2{color:#ffd700;}
 nav ul{display:flex;list-style:none;}
 nav ul li{margin-left:25px;}
 nav ul li a{color:white;text-decoration:none;font-weight:500;}
@@ -57,29 +55,51 @@ nav ul li{margin:15px 0;}
 
 /* HERO */
 .hero{
+position:relative;
 height:100vh;
 display:flex;
 align-items:center;
 justify-content:center;
+text-align:center;
+overflow:hidden;
 background:linear-gradient(135deg,#001f5f,#003cff,#ff0080);
 background-size:400% 400%;
-animation:gradientMove 8s ease infinite;
-text-align:center;
-padding:20px;
+animation:gradientMove 10s ease infinite;
 }
+
 @keyframes gradientMove{
 0%{background-position:0% 50%;}
 50%{background-position:100% 50%;}
 100%{background-position:0% 50%;}
 }
 
+.hero-overlay{
+position:absolute;
+width:100%;
+height:100%;
+background:radial-gradient(circle at center, rgba(255,255,255,0.15), transparent 70%);
+animation:ripple 6s infinite ease-in-out;
+}
+
+@keyframes ripple{
+0%{transform:scale(1);opacity:0.5;}
+50%{transform:scale(1.2);opacity:0.3;}
+100%{transform:scale(1);opacity:0.5;}
+}
+
 .hero-content{
+position:relative;
 background:rgba(0,0,0,0.5);
 padding:50px;
 border-radius:20px;
-backdrop-filter:blur(10px);
+backdrop-filter:blur(12px);
 }
-.hero h1{font-size:48px;margin-bottom:20px;}
+
+.hero h1{
+font-size:48px;
+margin-bottom:20px;
+}
+
 .offer{
 background:#ff0080;
 padding:10px 25px;
@@ -88,14 +108,23 @@ display:inline-block;
 font-weight:600;
 animation:glow 1.5s infinite alternate;
 }
+
 @keyframes glow{
 from{box-shadow:0 0 10px #ff0080;}
 to{box-shadow:0 0 30px #ffd700;}
 }
 
 /* SECTION */
-.section{padding:90px 40px;text-align:center;}
-.section h2{color:#ffd700;margin-bottom:40px;font-size:36px;}
+.section{
+padding:90px 40px;
+text-align:center;
+}
+
+.section h2{
+color:#ffd700;
+margin-bottom:30px;
+font-size:34px;
+}
 
 /* PRICING TABLE */
 table{
@@ -103,7 +132,7 @@ width:90%;
 margin:auto;
 border-collapse:collapse;
 background:rgba(255,255,255,0.08);
-border-radius:15px;
+border-radius:10px;
 overflow:hidden;
 }
 th,td{
@@ -113,6 +142,14 @@ border:1px solid rgba(255,255,255,0.2);
 th{background:#ff0080;}
 tr:hover td{background:rgba(255,0,128,0.2);}
 
+/* TERMS */
+.terms{
+max-width:800px;
+margin:auto;
+text-align:left;
+line-height:1.8;
+}
+
 /* CARDS */
 .cards{
 display:flex;
@@ -120,9 +157,10 @@ flex-wrap:wrap;
 justify-content:center;
 gap:30px;
 }
+
 .card{
 width:320px;
-height:330px;
+height:300px;
 border-radius:20px;
 overflow:hidden;
 background-size:cover;
@@ -153,29 +191,7 @@ gap:40px;
 .contact-info{max-width:500px;text-align:left;}
 iframe{border-radius:15px;}
 
-/* FLOAT BUTTONS */
-.whatsapp{
-position:fixed;
-bottom:20px;
-right:20px;
-background:#25d366;
-padding:15px;
-border-radius:50%;
-color:white;
-text-decoration:none;
-z-index:2000;
-}
-.call{
-position:fixed;
-bottom:90px;
-right:20px;
-background:#ffd700;
-padding:15px;
-border-radius:50%;
-color:#001f5f;
-text-decoration:none;
-z-index:2000;
-}
+/* FLOAT BUTTON */
 .book-now{
 position:fixed;
 top:50%;
@@ -213,22 +229,26 @@ border-radius:0;
 <div class="menu-toggle" onclick="toggleMenu()">☰</div>
 <ul id="menu">
 <li><a href="#pricing">Pricing</a></li>
-<li><a href="#facilities">Facilities</a></li>
+<li><a href="#terms">Terms</a></li>
 <li><a href="#contact">Contact</a></li>
 </ul>
 </nav>
 
+<!-- HERO -->
 <section class="hero">
+<div class="hero-overlay"></div>
 <div class="hero-content">
 <h1>Spray Water Park & Resort</h1>
-<div class="offer">🎉 FREE DINNER + UPTO 20% DISCOUNT</div>
+<div class="offer">🎉 FREE FOOD + UPTO 20% DISCOUNT</div>
 <br><br>
-<a href="https://spraywaterpark.vercel.app" target="_blank" style="background:#ffd700;color:#000;padding:12px 25px;border-radius:30px;text-decoration:none;font-weight:600;">
+<a href="https://spraywaterpark.vercel.app" target="_blank" 
+style="background:#ffd700;color:#000;padding:12px 25px;border-radius:30px;text-decoration:none;font-weight:600;">
 Book Now
 </a>
 </div>
 </section>
 
+<!-- PRICING -->
 <section class="section" id="pricing">
 <h2>Water Park Pricing</h2>
 <table>
@@ -238,7 +258,21 @@ Book Now
 </table>
 </section>
 
-<section class="section" id="facilities">
+<!-- TERMS -->
+<section class="section" id="terms">
+<h2>Terms & Conditions</h2>
+<div class="terms">
+• Proper swimwear mandatory.<br>
+• Outside food not allowed inside water park.<br>
+• Management not responsible for valuables.<br>
+• Children below 3 years free entry.<br>
+• Offers may change without prior notice.<br>
+• Discount upto 20% applicable on selected days only.<br>
+</div>
+</section>
+
+<!-- FACILITIES -->
+<section class="section">
 <h2>Banquet & Garden Facilities</h2>
 <div class="cards">
 
@@ -263,6 +297,7 @@ Separate Kitchen<br>
 </div>
 </section>
 
+<!-- CONTACT -->
 <section class="contact" id="contact">
 <h2>Contact Us</h2>
 <div class="contact-container">
@@ -285,9 +320,6 @@ width="350" height="250">
 
 </div>
 </section>
-
-<a class="whatsapp" href="https://wa.me/919773307993" target="_blank">💬</a>
-<a class="call" href="tel:9773307993">📞</a>
 
 <a class="book-now" href="https://spraywaterpark.vercel.app" target="_blank">
 BOOK NOW
