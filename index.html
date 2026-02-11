@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Spray Water Park & Resort</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+font-family:'Poppins',sans-serif;
+background:#001f5f;
+color:white;
+overflow-x:hidden;
+scroll-behavior:smooth;
+}
+
+/* ========= LOADER ========= */
+#loader{
+position:fixed;
+width:100%;
+height:100%;
+background:#001f5f;
+display:flex;
+align-items:center;
+justify-content:center;
+z-index:9999;
+}
+.water-loader{
+width:100px;
+height:100px;
+border-radius:50%;
+background:radial-gradient(circle at 30% 30%, #00cfff, #0044ff);
+animation:wave 1.5s infinite ease-in-out;
+}
+@keyframes wave{
+0%,100%{transform:scale(1);}
+50%{transform:scale(1.2);}
+}
+
+/* NAVBAR */
+nav{
+position:fixed;
+width:100%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 50px;
+background:rgba(0,31,95,0.9);
+z-index:1000;
+}
+nav h2{color:#ffd700;}
+nav ul{display:flex;list-style:none;}
+nav ul li{margin-left:25px;}
+nav ul li a{color:white;text-decoration:none;}
+.menu-toggle{display:none;font-size:28px;cursor:pointer;}
+
+@media(max-width:768px){
+nav{padding:15px 20px;}
+nav ul{
+position:absolute;
+top:70px;
+left:0;
+width:100%;
+background:#001f5f;
+flex-direction:column;
+text-align:center;
+display:none;
+}
+nav ul.active{display:flex;}
+nav ul li{margin:15px 0;}
+.menu-toggle{display:block;}
+}
+
+/* HERO */
+.hero{
+position:relative;
+height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+overflow:hidden;
+}
+.bg-video{
+position:absolute;
+width:100%;
+height:100%;
+object-fit:cover;
+z-index:-3;
+}
+.video-overlay{
+position:absolute;
+width:100%;
+height:100%;
+background:linear-gradient(to bottom, rgba(0,0,40,0.6), rgba(0,0,80,0.8));
+z-index:-2;
+}
+
+/* PARALLAX EFFECT */
+.parallax{
+background-attachment:fixed;
+background-size:cover;
+background-position:center;
+}
+
+/* BUBBLES */
+.bubble{
+position:absolute;
+bottom:-100px;
+background:rgba(255,255,255,0.3);
+border-radius:50%;
+animation:rise 12s infinite ease-in;
+}
+@keyframes rise{
+0%{transform:translateY(0);opacity:0;}
+50%{opacity:1;}
+100%{transform:translateY(-110vh);opacity:0;}
+}
+
+/* HERO CONTENT */
+.hero-content{
+position:relative;
+background:rgba(0,0,0,0.5);
+padding:60px;
+border-radius:25px;
+text-align:center;
+backdrop-filter:blur(10px);
+animation:fadeUp 1.5s ease;
+}
+.hero h1{font-size:55px;}
+.offer-badge{
+display:inline-block;
+margin-top:20px;
+padding:12px 25px;
+background:#ff0080;
+border-radius:40px;
+font-weight:600;
+box-shadow:0 0 20px #ff0080;
+animation:neon 1.5s infinite alternate;
+}
+@keyframes neon{
+from{box-shadow:0 0 10px #ff0080;}
+to{box-shadow:0 0 30px #ffd700;}
+}
+
+/* WAVE SVG */
+.wave{
+position:relative;
+}
+.wave svg{
+display:block;
+width:100%;
+height:100px;
+}
+
+/* SECTION */
+.section{padding:100px 60px;text-align:center;}
+.section h2{color:#ffd700;margin-bottom:50px;font-size:38px;}
+
+.pricing-table{
+width:80%;
+margin:auto;
+border-collapse:collapse;
+background:rgba(255,255,255,0.08);
+border-radius:15px;
+overflow:hidden;
+}
+.pricing-table th,
+.pricing-table td{
+padding:15px;
+border:1px solid rgba(255,255,255,0.2);
+}
+.pricing-table th{background:#ff0080;}
+.pricing-table tr:hover td{
+background:rgba(255,0,128,0.2);
+}
+
+/* IMAGE CARDS */
+.cards{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:40px;
+}
+.image-card{
+position:relative;
+width:340px;
+height:350px;
+border-radius:20px;
+overflow:hidden;
+background-size:cover;
+background-position:center;
+display:flex;
+align-items:flex-end;
+transition:transform 0.5s ease;
+}
+.image-card:hover{transform:scale(1.05);}
+.image-card .overlay{
+background:linear-gradient(to top, rgba(0,0,0,0.85), transparent);
+width:100%;
+padding:20px;
+}
+.image-card h3{color:#ffd700;}
+
+/* CONTACT */
+.contact{
+background:#000d26;
+padding:80px 40px;
+}
+.contact-container{
+display:flex;
+flex-wrap:wrap;
+gap:50px;
+justify-content:center;
+}
+.contact-info{
+flex:1;
+min-width:280px;
+max-width:500px;
+text-align:left;
+}
+.map{
+flex:1;
+min-width:280px;
+max-width:500px;
+}
+
+/* FLOAT BUTTONS */
+.whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25d366;
+padding:15px;
+border-radius:50%;
+color:white;
+text-decoration:none;
+z-index:2000;
+}
+.call{
+position:fixed;
+bottom:90px;
+right:20px;
+background:#ffd700;
+padding:15px;
+border-radius:50%;
+color:#001f5f;
+text-decoration:none;
+z-index:2000;
+}
+.book-now{
+position:fixed;
+top:50%;
+right:0;
+transform:translateY(-50%);
+background:linear-gradient(135deg,#ff0080,#ff6a00);
+color:white;
+padding:15px 20px;
+border-radius:10px 0 0 10px;
+font-weight:600;
+text-decoration:none;
+writing-mode:vertical-rl;
+text-orientation:mixed;
+z-index:3000;
+animation:glow 1.5s infinite alternate;
+}
+@keyframes glow{
+from{box-shadow:0 0 10px #ff0080;}
+to{box-shadow:0 0 30px #ffd700;}
+}
+
+/* ANIMATION */
+@keyframes fadeUp{
+from{opacity:0;transform:translateY(40px);}
+to{opacity:1;transform:translateY(0);}
+}
+
+@media(max-width:768px){
+.section{padding:60px 20px;}
+.pricing-table{width:100%;}
+.cards{flex-direction:column;align-items:center;}
+.contact-container{flex-direction:column;}
+.book-now{
+writing-mode:horizontal-tb;
+bottom:0;
+top:auto;
+right:0;
+width:100%;
+text-align:center;
+border-radius:0;
+}
+}
+</style>
+</head>
+
+<body>
+
+<div id="loader">
+<div class="water-loader"></div>
+</div>
+
+<nav>
+<h2>Spray Water Park</h2>
+<div class="menu-toggle" onclick="toggleMenu()">☰</div>
+<ul id="menu">
+<li><a href="#pricing">Pricing</a></li>
+<li><a href="#facilities">Facilities</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
+
+<section class="hero">
+<video autoplay muted loop playsinline class="bg-video">
+<source src="https://www.w3schools.com/howto/rain.mp4" type="video/mp4">
+</video>
+<div class="video-overlay"></div>
+
+<!-- Bubbles -->
+<div class="bubble" style="left:10%;width:20px;height:20px;"></div>
+<div class="bubble" style="left:30%;width:25px;height:25px;animation-duration:14s;"></div>
+<div class="bubble" style="left:70%;width:18px;height:18px;animation-duration:10s;"></div>
+
+<div class="hero-content">
+<h1>Spray Water Park & Resort</h1>
+<div class="offer-badge">🎉 FREE DINNER + UPTO 20% DISCOUNT</div>
+</div>
+</section>
+
+<div class="wave">
+<svg viewBox="0 0 500 150" preserveAspectRatio="none">
+<path d="M0.00,49.98 C150.00,150.00 349.20,-49.98 500.00,49.98 L500.00,150.00 L0.00,150.00 Z" style="stroke:none; fill:#001f5f;"></path>
+</svg>
+</div>
+
+<section class="section" id="pricing">
+<h2>Water Park Pricing</h2>
+<table class="pricing-table">
+<tr><th>Shift</th><th>Adults</th><th>Kids</th><th>Timing</th></tr>
+<tr><td>Morning</td><td>₹500</td><td>₹350</td><td>10AM – 3PM</td></tr>
+<tr><td>Evening</td><td>₹800</td><td>₹500</td><td>4PM – 10PM</td></tr>
+</table>
+</section>
+
+<section class="section" id="facilities">
+<h2>Banquet & Garden Facilities</h2>
+
+<div class="cards">
+<div class="image-card" style="background-image:url('https://images.unsplash.com/photo-1519167758481-83f550bb49b3');">
+<div class="overlay">
+<h3>🏢 Banquet Hall</h3>
+<p>Capacity upto 300 persons<br>
+Sound | Stage | AC Hall<br>
+Chair Setup | Round Tables</p>
+</div>
+</div>
+
+<div class="image-card" style="background-image:url('https://images.unsplash.com/photo-1506744038136-46273834b3fb');">
+<div class="overlay">
+<h3>🌿 Party Lawn & Garden</h3>
+<p>Capacity upto 1500 Guests<br>
+Separate Kitchen<br>
+3 Rooms with Attached Bath</p>
+</div>
+</div>
+</div>
+</section>
+
+<section class="contact" id="contact">
+<h2>Contact Us</h2>
+<div class="contact-container">
+<div class="contact-info">
+<h3 style="color:#ffd700;">Spray Water Park & Resort</h3>
+<p><strong>Address:</strong><br>
+Opp Akshya Patra, Behind DMart,<br>
+Jagatpura, Jaipur, Rajasthan</p>
+<p><strong>Phone:</strong> 9773307993</p>
+<p><strong>Email:</strong> spraywaterpark@gmail.com</p>
+</div>
+
+<div class="map">
+<iframe 
+src="https://maps.google.com/maps?q=Spray%20Water%20Park%20Jagatpura%20Jaipur&t=&z=15&ie=UTF8&iwloc=&output=embed"
+width="100%" height="300" style="border-radius:15px;border:0;">
+</iframe>
+</div>
+</div>
+</section>
+
+<a class="whatsapp" href="https://wa.me/919773307993">💬</a>
+<a class="call" href="tel:9773307993">📞</a>
+<a class="book-now" href="https://spraywaterpark.vercel.app" target="_blank">
+BOOK NOW
+</a>
+
+<script>
+function toggleMenu(){
+document.getElementById("menu").classList.toggle("active");
+}
+window.addEventListener("load",function(){
+document.getElementById("loader").style.display="none";
+});
+</script>
+
+</body>
+</html>
