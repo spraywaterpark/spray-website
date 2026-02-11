@@ -8,16 +8,25 @@
 
 <meta name="description" content="Spray Water Park & Resort Jaipur – Water Park, Banquet Hall & Party Lawn. Free Food & Upto 20% Discount.">
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600;700&display=swap" rel="stylesheet">
 
 <style>
+:root{
+--royal-blue:#0b1f5f;
+--deep-purple:#4b2c82;
+--dark-orange:#ff6a00;
+--gold:#ffd700;
+--white:#ffffff;
+}
+
 *{margin:0;padding:0;box-sizing:border-box;}
+
 body{
 font-family:'Poppins',sans-serif;
-background:#001f5f;
-color:white;
-overflow-x:hidden;
+background:var(--royal-blue);
+color:var(--white);
 scroll-behavior:smooth;
+overflow-x:hidden;
 }
 
 /* NAVBAR */
@@ -27,127 +36,148 @@ width:100%;
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:18px 40px;
-background:rgba(0,0,40,0.85);
+padding:18px 50px;
+background:rgba(11,31,95,0.95);
+backdrop-filter:blur(10px);
 z-index:1000;
 }
-nav h2{color:#ffd700;}
-nav ul{display:flex;list-style:none;}
-nav ul li{margin-left:25px;}
-nav ul li a{color:white;text-decoration:none;font-weight:500;}
-.menu-toggle{display:none;font-size:26px;cursor:pointer;}
 
-@media(max-width:768px){
-nav ul{
-position:absolute;
-top:60px;
-left:0;
-width:100%;
-background:#001f5f;
-flex-direction:column;
-text-align:center;
-display:none;
+nav h2{
+color:var(--gold);
+font-weight:700;
+letter-spacing:1px;
 }
-nav ul.active{display:flex;}
-nav ul li{margin:15px 0;}
-.menu-toggle{display:block;}
+
+nav ul{
+display:flex;
+list-style:none;
+}
+
+nav ul li{
+margin-left:30px;
+}
+
+nav ul li a{
+color:var(--white);
+text-decoration:none;
+font-weight:500;
+transition:0.3s;
+}
+
+nav ul li a:hover{
+color:var(--dark-orange);
+}
+
+.menu-toggle{
+display:none;
+font-size:26px;
+cursor:pointer;
 }
 
 /* HERO */
 .hero{
-position:relative;
 height:100vh;
 display:flex;
 align-items:center;
 justify-content:center;
 text-align:center;
-overflow:hidden;
-background:linear-gradient(135deg,#001f5f,#003cff,#ff0080);
-background-size:400% 400%;
-animation:gradientMove 10s ease infinite;
-}
-
-@keyframes gradientMove{
-0%{background-position:0% 50%;}
-50%{background-position:100% 50%;}
-100%{background-position:0% 50%;}
-}
-
-.hero-overlay{
-position:absolute;
-width:100%;
-height:100%;
-background:radial-gradient(circle at center, rgba(255,255,255,0.15), transparent 70%);
-animation:ripple 6s infinite ease-in-out;
-}
-
-@keyframes ripple{
-0%{transform:scale(1);opacity:0.5;}
-50%{transform:scale(1.2);opacity:0.3;}
-100%{transform:scale(1);opacity:0.5;}
+padding:20px;
+background:linear-gradient(135deg,var(--royal-blue),var(--deep-purple));
 }
 
 .hero-content{
-position:relative;
-background:rgba(0,0,0,0.5);
-padding:50px;
-border-radius:20px;
-backdrop-filter:blur(12px);
+background:rgba(255,255,255,0.08);
+padding:60px;
+border-radius:25px;
+backdrop-filter:blur(20px);
+box-shadow:0 20px 40px rgba(0,0,0,0.4);
 }
 
 .hero h1{
-font-size:48px;
+font-size:52px;
 margin-bottom:20px;
+font-weight:700;
 }
 
 .offer{
-background:#ff0080;
-padding:10px 25px;
+background:var(--dark-orange);
+padding:12px 30px;
 border-radius:40px;
-display:inline-block;
 font-weight:600;
-animation:glow 1.5s infinite alternate;
+display:inline-block;
+margin-bottom:25px;
+box-shadow:0 0 20px var(--dark-orange);
 }
 
-@keyframes glow{
-from{box-shadow:0 0 10px #ff0080;}
-to{box-shadow:0 0 30px #ffd700;}
+.hero-btn{
+background:var(--gold);
+color:#000;
+padding:14px 30px;
+border-radius:50px;
+text-decoration:none;
+font-weight:600;
+transition:0.3s;
+}
+
+.hero-btn:hover{
+background:var(--dark-orange);
+color:#fff;
 }
 
 /* SECTION */
 .section{
-padding:90px 40px;
+padding:100px 50px;
 text-align:center;
 }
 
+.section-light{
+background:#ffffff;
+color:#000;
+}
+
 .section h2{
-color:#ffd700;
-margin-bottom:30px;
-font-size:34px;
+font-size:38px;
+margin-bottom:40px;
+color:var(--gold);
 }
 
 /* PRICING TABLE */
 table{
-width:90%;
+width:80%;
 margin:auto;
 border-collapse:collapse;
-background:rgba(255,255,255,0.08);
-border-radius:10px;
+border-radius:15px;
 overflow:hidden;
+box-shadow:0 15px 35px rgba(0,0,0,0.4);
 }
-th,td{
-padding:15px;
-border:1px solid rgba(255,255,255,0.2);
+
+th{
+background:var(--dark-orange);
+padding:18px;
+color:#fff;
 }
-th{background:#ff0080;}
-tr:hover td{background:rgba(255,0,128,0.2);}
+
+td{
+padding:16px;
+background:rgba(255,255,255,0.08);
+border:1px solid rgba(255,255,255,0.1);
+}
+
+.section-light td{
+background:#f4f4f4;
+border:1px solid #ddd;
+}
+
+tr:hover td{
+background:rgba(255,106,0,0.2);
+}
 
 /* TERMS */
 .terms{
 max-width:800px;
 margin:auto;
-text-align:left;
-line-height:1.8;
+line-height:1.9;
+font-size:15px;
 }
 
 /* CARDS */
@@ -155,41 +185,58 @@ line-height:1.8;
 display:flex;
 flex-wrap:wrap;
 justify-content:center;
-gap:30px;
+gap:40px;
 }
 
 .card{
-width:320px;
-height:300px;
+width:340px;
+height:320px;
 border-radius:20px;
 overflow:hidden;
 background-size:cover;
 background-position:center;
 display:flex;
 align-items:flex-end;
-transition:0.5s;
+transition:0.4s;
+box-shadow:0 15px 35px rgba(0,0,0,0.5);
 }
-.card:hover{transform:scale(1.05);}
+
+.card:hover{
+transform:translateY(-10px);
+}
+
 .card-content{
-background:linear-gradient(to top, rgba(0,0,0,0.85), transparent);
-padding:20px;
+background:linear-gradient(to top,rgba(0,0,0,0.9),transparent);
+padding:25px;
 width:100%;
 }
-.card h3{color:#ffd700;margin-bottom:10px;}
+
+.card h3{
+color:var(--gold);
+margin-bottom:10px;
+}
 
 /* CONTACT */
 .contact{
-background:#000d26;
-padding:70px 30px;
+background:var(--deep-purple);
+padding:80px 40px;
 }
+
 .contact-container{
 display:flex;
 flex-wrap:wrap;
 justify-content:center;
-gap:40px;
+gap:50px;
 }
-.contact-info{max-width:500px;text-align:left;}
-iframe{border-radius:15px;}
+
+.contact-info{
+max-width:500px;
+text-align:left;
+}
+
+iframe{
+border-radius:20px;
+}
 
 /* FLOAT BUTTON */
 .book-now{
@@ -197,8 +244,8 @@ position:fixed;
 top:50%;
 right:0;
 transform:translateY(-50%);
-background:linear-gradient(135deg,#ff0080,#ff6a00);
-color:white;
+background:linear-gradient(135deg,var(--dark-orange),var(--gold));
+color:#000;
 padding:15px 20px;
 border-radius:10px 0 0 10px;
 font-weight:600;
@@ -207,8 +254,29 @@ writing-mode:vertical-rl;
 z-index:3000;
 }
 
+/* MOBILE */
 @media(max-width:768px){
-.cards{flex-direction:column;align-items:center;}
+
+nav ul{
+position:absolute;
+top:60px;
+left:0;
+width:100%;
+background:var(--royal-blue);
+flex-direction:column;
+text-align:center;
+display:none;
+}
+
+nav ul.active{display:flex;}
+nav ul li{margin:15px 0;}
+.menu-toggle{display:block;}
+
+.cards{
+flex-direction:column;
+align-items:center;
+}
+
 .book-now{
 writing-mode:horizontal-tb;
 bottom:0;
@@ -218,6 +286,15 @@ width:100%;
 text-align:center;
 border-radius:0;
 }
+
+.hero h1{
+font-size:32px;
+}
+
+.hero-content{
+padding:35px;
+}
+
 }
 </style>
 </head>
@@ -234,22 +311,17 @@ border-radius:0;
 </ul>
 </nav>
 
-<!-- HERO -->
 <section class="hero">
-<div class="hero-overlay"></div>
 <div class="hero-content">
 <h1>Spray Water Park & Resort</h1>
-<div class="offer">🎉 FREE FOOD + UPTO 20% DISCOUNT</div>
-<br><br>
-<a href="https://spraywaterpark.vercel.app" target="_blank" 
-style="background:#ffd700;color:#000;padding:12px 25px;border-radius:30px;text-decoration:none;font-weight:600;">
+<div class="offer">FREE FOOD + UPTO 20% DISCOUNT</div>
+<a href="https://spraywaterpark.vercel.app" target="_blank" class="hero-btn">
 Book Now
 </a>
 </div>
 </section>
 
-<!-- PRICING -->
-<section class="section" id="pricing">
+<section class="section section-light" id="pricing">
 <h2>Water Park Pricing</h2>
 <table>
 <tr><th>Shift</th><th>Adults</th><th>Kids</th><th>Timing</th></tr>
@@ -258,7 +330,6 @@ Book Now
 </table>
 </section>
 
-<!-- TERMS -->
 <section class="section" id="terms">
 <h2>Terms & Conditions</h2>
 <div class="terms">
@@ -271,44 +342,37 @@ Book Now
 </div>
 </section>
 
-<!-- FACILITIES -->
-<section class="section">
+<section class="section section-light">
 <h2>Banquet & Garden Facilities</h2>
 <div class="cards">
 
 <div class="card" style="background-image:url('https://images.unsplash.com/photo-1519167758481-83f550bb49b3');">
 <div class="card-content">
-<h3>🏢 Banquet Hall</h3>
+<h3>Banquet Hall</h3>
 Capacity upto 300 persons<br>
-AC Hall | Sound | Stage<br>
-Round Table Setup
+AC Hall | Sound | Stage | Round Tables
 </div>
 </div>
 
 <div class="card" style="background-image:url('https://images.unsplash.com/photo-1506744038136-46273834b3fb');">
 <div class="card-content">
-<h3>🌿 Party Lawn</h3>
+<h3>Party Lawn</h3>
 Capacity upto 1500 Guests<br>
-Separate Kitchen<br>
-3 Rooms with Bath
+Separate Kitchen | 3 Rooms with Bath
 </div>
 </div>
 
 </div>
 </section>
 
-<!-- CONTACT -->
 <section class="contact" id="contact">
 <h2>Contact Us</h2>
 <div class="contact-container">
-
 <div class="contact-info">
-<h3 style="color:#ffd700;">Spray Water Park & Resort</h3>
-<p><strong>Address:</strong><br>
-Opp Akshya Patra, Behind DMart,<br>
-Jagatpura, Jaipur</p>
-<p><strong>Phone:</strong> 9773307993</p>
-<p><strong>Email:</strong> spraywaterpark@gmail.com</p>
+<h3>Spray Water Park & Resort</h3>
+<p>Opp Akshya Patra, Behind DMart, Jagatpura, Jaipur</p>
+<p>Phone: 9773307993</p>
+<p>Email: spraywaterpark@gmail.com</p>
 </div>
 
 <div>
