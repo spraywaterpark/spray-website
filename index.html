@@ -74,6 +74,8 @@ background:rgba(255,255,255,0.05);
 padding:70px;
 border-radius:20px;
 backdrop-filter:blur(20px);
+animation:fadeUp 1s ease forwards;
+opacity:0;
 }
 .hero h1{font-size:50px;margin-bottom:20px;}
 .offer{
@@ -96,17 +98,25 @@ background:var(--orange);
 color:#000;
 }
 
-/* SECTION */
+/* SECTIONS */
 .section{
 padding:110px 60px;
 background:var(--dark);
 text-align:center;
+opacity:0;
+transform:translateY(40px);
+transition:1s;
+}
+.section.show{
+opacity:1;
+transform:translateY(0);
 }
 .section:nth-child(even){background:var(--grey);}
 .section h2{color:var(--orange);margin-bottom:50px;}
 
 /* GALLERY */
 .gallery-container{
+position:relative;
 max-width:1000px;
 margin:auto;
 overflow:hidden;
@@ -121,6 +131,20 @@ width:100%;
 height:500px;
 object-fit:cover;
 }
+
+.arrow{
+position:absolute;
+top:50%;
+transform:translateY(-50%);
+background:rgba(0,0,0,0.6);
+color:#fff;
+border:none;
+font-size:30px;
+padding:10px 15px;
+cursor:pointer;
+}
+.arrow-left{left:10px;}
+.arrow-right{right:10px;}
 
 /* PRICING */
 table{
@@ -140,16 +164,7 @@ border:1px solid #222;
 color:#ddd;
 }
 
-/* TERMS */
-.terms{
-max-width:800px;
-margin:auto;
-line-height:1.9;
-color:#ccc;
-text-align:left;
-}
-
-/* CARDS */
+/* FACILITY CARDS */
 .cards{
 display:flex;
 flex-wrap:wrap;
@@ -158,7 +173,7 @@ gap:40px;
 }
 .card{
 width:340px;
-height:320px;
+height:300px;
 border-radius:15px;
 overflow:hidden;
 background-size:cover;
@@ -186,7 +201,6 @@ display:flex;
 flex-wrap:wrap;
 justify-content:center;
 gap:60px;
-text-align:left;
 }
 .social-links a{
 display:inline-block;
@@ -198,9 +212,8 @@ border-radius:30px;
 text-decoration:none;
 font-weight:500;
 }
-iframe{border-radius:15px;filter:grayscale(100%);}
 
-/* BOOK NOW */
+/* FLOAT BUTTONS */
 .book-now{
 position:fixed;
 top:50%;
@@ -214,6 +227,29 @@ font-weight:600;
 text-decoration:none;
 writing-mode:vertical-rl;
 z-index:3000;
+}
+
+.whatsapp-float{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25d366;
+color:#fff;
+width:55px;
+height:55px;
+display:flex;
+align-items:center;
+justify-content:center;
+border-radius:50%;
+font-size:26px;
+text-decoration:none;
+z-index:3000;
+}
+
+/* ANIMATION */
+@keyframes fadeUp{
+from{opacity:0;transform:translateY(40px);}
+to{opacity:1;transform:translateY(0);}
 }
 
 /* MOBILE */
@@ -259,7 +295,6 @@ border-radius:0;
 <li><a href="#gallery">Gallery</a></li>
 <li><a href="#pricing">Pricing</a></li>
 <li><a href="#facilities">Facilities</a></li>
-<li><a href="#terms">Terms</a></li>
 <li><a href="#contact">Contact</a></li>
 </ul>
 </nav>
@@ -275,11 +310,13 @@ border-radius:0;
 <section class="section" id="gallery">
 <h2>Our Gallery</h2>
 <div class="gallery-container">
+<button class="arrow arrow-left" onclick="prevSlide()">❮</button>
 <div class="gallery" id="gallery">
 <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e">
 <img src="https://images.unsplash.com/photo-1504608524841-42fe6f032b4b">
 <img src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21">
 </div>
+<button class="arrow arrow-right" onclick="nextSlide()">❯</button>
 </div>
 </section>
 
@@ -295,62 +332,39 @@ border-radius:0;
 <section class="section" id="facilities">
 <h2>Banquet Hall & Party Lawn</h2>
 <div class="cards">
-
 <div class="card" style="background-image:url('https://images.unsplash.com/photo-1519167758481-83f550bb49b3');">
 <div class="card-content">
 <h3>Banquet Hall</h3>
-Capacity upto 300 persons<br>
-AC Hall | Sound | Stage | Round Tables
+Capacity upto 300 persons<br>AC Hall | Sound | Stage | Round Tables
 </div>
 </div>
-
 <div class="card" style="background-image:url('https://images.unsplash.com/photo-1506744038136-46273834b3fb');">
 <div class="card-content">
 <h3>Party Lawn</h3>
-Capacity upto 1500 Guests<br>
-Separate Kitchen | 3 Rooms with Bath
+Capacity upto 1500 Guests<br>Separate Kitchen | 3 Rooms with Bath
 </div>
 </div>
-
 </div>
 </section>
 
-<section class="section" id="terms">
-<h2>Terms & Conditions</h2>
-<div class="terms">
-• Proper swimwear mandatory.<br>
-• Outside food not allowed inside water park.<br>
-• Management not responsible for valuables.<br>
-• Children below 3 years free entry.<br>
-• Offers may change without prior notice.<br>
-• Discount upto 20% applicable on selected days only.
-</div>
-</section>
-
-<section class="contact" id="contact">
-<h2 style="color:var(--orange);text-align:center;margin-bottom:50px;">Contact Us</h2>
+<section class="contact section" id="contact">
+<h2>Contact Us</h2>
 <div class="contact-container">
 <div>
-<p><strong>Address:</strong><br>
-Opp Akshya Patra, Behind DMart, Jagatpura, Jaipur</p>
-<p><strong>Phone:</strong> 9773307993</p>
-<p><strong>Email:</strong> spraywaterpark@gmail.com</p>
-
+<p>Opp Akshya Patra, Behind DMart, Jagatpura, Jaipur</p>
+<p>Phone: 9773307993</p>
+<p>Email: spraywaterpark@gmail.com</p>
 <div class="social-links">
 <a href="https://www.instagram.com/spraywaterpark" target="_blank">Instagram</a>
-<a href="https://www.youtube.com/" target="_blank">YouTube</a>
+<a href="#">YouTube</a>
 <a href="https://wa.me/919773307993" target="_blank">WhatsApp</a>
 </div>
 </div>
-
-<div>
-<iframe src="https://maps.google.com/maps?q=Spray%20Water%20Park%20Jagatpura%20Jaipur&t=&z=15&ie=UTF8&iwloc=&output=embed" width="350" height="250"></iframe>
-</div>
-
 </div>
 </section>
 
 <a class="book-now" href="https://spraywaterpark.vercel.app" target="_blank">BOOK NOW</a>
+<a class="whatsapp-float" href="https://wa.me/919773307993" target="_blank">💬</a>
 
 <script>
 function toggleMenu(){
@@ -359,11 +373,27 @@ document.getElementById("menu").classList.toggle("active");
 
 let index=0;
 const gallery=document.getElementById("gallery");
-setInterval(()=>{
+function nextSlide(){
 index++;
-if(index>2){index=0;}
+if(index>2) index=0;
 gallery.style.transform=`translateX(-${index*100}%)`;
-},4000);
+}
+function prevSlide(){
+index--;
+if(index<0) index=2;
+gallery.style.transform=`translateX(-${index*100}%)`;
+}
+
+/* Scroll Reveal */
+const sections=document.querySelectorAll('.section');
+window.addEventListener('scroll',()=>{
+sections.forEach(sec=>{
+const top=sec.getBoundingClientRect().top;
+if(top<window.innerHeight-100){
+sec.classList.add('show');
+}
+});
+});
 </script>
 
 </body>
