@@ -5,20 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Spray Water Park Jaipur | Water Rides, Banquet Hall & Party Lawn</title>
-
-<meta name="description" content="Spray Water Park Jaipur – Enjoy water rides, wave pool, banquet hall & party lawn. Free Food & Up to 20% Discount.">
+<meta name="description" content="Spray Water Park Jaipur – Water rides, wave pool, banquet hall (300 capacity), party lawn (1500 capacity). Free Food & Up to 20% Discount.">
 
 <link rel="icon" href="images/logo.png">
-
-<!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-EGR22S1NT0"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-EGR22S1NT0');
-</script>
-
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
 <style>
@@ -27,6 +16,7 @@ gtag('config', 'G-EGR22S1NT0');
 --dark:#1a1a1a;
 --grey:#222;
 --orange:#ff6a00;
+--green:#25d366;
 }
 
 *{margin:0;padding:0;box-sizing:border-box;}
@@ -42,8 +32,7 @@ img{max-width:100%;display:block}
 /* NAV */
 nav{
 position:fixed;
-top:0;
-width:100%;
+top:0;width:100%;
 display:flex;
 justify-content:space-between;
 align-items:center;
@@ -52,55 +41,48 @@ background:#111;
 z-index:1000;
 }
 nav img{height:50px;}
-nav ul{
-display:flex;
-list-style:none;
-gap:20px;
-}
+nav ul{display:flex;list-style:none;gap:20px;}
 nav ul li a{color:#ccc;font-size:14px;}
 nav ul li a:hover{color:var(--orange);}
 
 /* HERO */
 .hero{
-height:100vh;
+min-height:100vh;
 background:url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e') center/cover no-repeat;
-display:flex;
-align-items:center;
-justify-content:center;
-text-align:center;
-position:relative;
-padding:20px;
+display:flex;align-items:center;justify-content:center;
+text-align:center;position:relative;padding:20px;
 }
 .hero::after{
 content:"";
 position:absolute;
-width:100%;
-height:100%;
+width:100%;height:100%;
 background:rgba(0,0,0,0.75);
 }
 .hero-content{
-position:relative;
-z-index:2;
+position:relative;z-index:2;
 background:rgba(255,255,255,0.05);
-padding:40px 25px;
+padding:45px 25px;
 border-radius:20px;
 max-width:700px;
+backdrop-filter:blur(10px);
 }
-.hero h1{font-size:32px;margin-bottom:20px;}
+.hero h1{font-size:34px;margin-bottom:20px;}
 .offer{
 background:var(--orange);
-padding:8px 20px;
+padding:8px 22px;
 border-radius:30px;
 display:inline-block;
 margin-bottom:20px;
 font-size:13px;
+font-weight:600;
 }
 .hero-btn{
 border:2px solid var(--orange);
 color:var(--orange);
-padding:10px 20px;
+padding:12px 25px;
 border-radius:30px;
 font-weight:600;
+transition:0.3s;
 }
 .hero-btn:hover{
 background:var(--orange);
@@ -109,7 +91,7 @@ color:#000;
 
 /* SECTION */
 .section{
-padding:80px 20px;
+padding:90px 20px;
 text-align:center;
 background:var(--dark);
 }
@@ -119,7 +101,7 @@ background:var(--grey);
 .section h2{
 color:var(--orange);
 margin-bottom:35px;
-font-size:24px;
+font-size:26px;
 }
 
 /* GALLERY */
@@ -131,9 +113,13 @@ max-width:1100px;
 margin:auto;
 }
 .gallery-grid img{
-height:250px;
+height:260px;
 object-fit:cover;
 border-radius:15px;
+transition:0.3s;
+}
+.gallery-grid img:hover{
+transform:scale(1.05);
 }
 
 /* PRICING */
@@ -169,14 +155,18 @@ margin:auto;
 }
 .card{
 background:#111;
-padding:25px;
+padding:30px;
 border-radius:15px;
 width:320px;
 text-align:center;
+transition:0.3s;
+}
+.card:hover{
+transform:translateY(-8px);
 }
 .card h3{
 color:var(--orange);
-margin-bottom:10px;
+margin-bottom:12px;
 }
 
 /* REVIEWS */
@@ -190,10 +180,14 @@ margin:auto;
 }
 .review{
 background:#111;
-padding:20px;
+padding:25px;
 border-radius:15px;
 width:320px;
 text-align:center;
+transition:0.3s;
+}
+.review:hover{
+transform:translateY(-6px);
 }
 
 /* CONTACT */
@@ -201,18 +195,10 @@ text-align:center;
 max-width:800px;
 margin:auto;
 }
-.contact p{margin-bottom:10px;}
-iframe{
-width:100%;
-height:300px;
-border-radius:15px;
-margin-top:20px;
-}
-
+.contact p{margin-bottom:12px;}
 .social-links{
 margin-top:15px;
 }
-
 .social-links a{
 display:inline-block;
 margin:6px;
@@ -220,42 +206,58 @@ padding:8px 18px;
 background:var(--orange);
 color:#000;
 border-radius:25px;
-font-size:14px;
 font-weight:600;
+}
+.social-links a:hover{
+background:#fff;
+}
+iframe{
+width:100%;
+height:300px;
+border-radius:15px;
+margin-top:20px;
+}
+
+/* FLOATING BUTTONS */
+.float-container{
+position:fixed;
+bottom:20px;
+right:20px;
+display:flex;
+flex-direction:column;
+gap:15px;
+z-index:1000;
+}
+
+.float-btn{
+width:60px;
+height:60px;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+color:#fff;
+font-size:22px;
+font-weight:700;
+box-shadow:0 8px 20px rgba(0,0,0,0.4);
 transition:0.3s;
 }
 
-.social-links a:hover{
-background:#fff;
-color:#000;
-}
-
-  
-
-/* BOOK BUTTON */
-.book-now{
-position:fixed;
-bottom:0;
-width:100%;
+.book-float{
 background:var(--orange);
 color:#000;
-text-align:center;
-padding:12px;
-font-weight:600;
-z-index:999;
 }
 
-/* DESKTOP */
-@media(min-width:769px){
-.hero h1{font-size:48px;}
-.book-now{
-top:50%;
-right:0;
-width:auto;
-transform:translateY(-50%);
-writing-mode:vertical-rl;
-border-radius:10px 0 0 10px;
+.whatsapp-float{
+background:var(--green);
 }
+
+.float-btn:hover{
+transform:scale(1.1);
+}
+
+@media(min-width:769px){
+.hero h1{font-size:50px;}
 }
 </style>
 </head>
@@ -281,7 +283,6 @@ border-radius:10px 0 0 10px;
 </div>
 </section>
 
-<!-- GALLERY -->
 <section class="section" id="gallery">
 <h2>Our Gallery</h2>
 <div class="gallery-grid">
@@ -292,7 +293,6 @@ border-radius:10px 0 0 10px;
 </div>
 </section>
 
-<!-- PRICING -->
 <section class="section" id="pricing">
 <h2>Water Park Pricing</h2>
 <div class="table-wrapper">
@@ -304,7 +304,6 @@ border-radius:10px 0 0 10px;
 </div>
 </section>
 
-<!-- FACILITIES -->
 <section class="section" id="facilities">
 <h2>Banquet Hall & Party Lawn</h2>
 <div class="cards">
@@ -321,29 +320,17 @@ Separate Kitchen | 3 Rooms
 </div>
 </section>
 
-<!-- REVIEWS -->
 <section class="section" id="reviews">
 <h2>Google Reviews (4.5 ⭐)</h2>
 <div class="reviews">
-<div class="review">
-⭐⭐⭐⭐⭐<br>
-"Water rides were thrilling and wave pool was awesome."
-</div>
-<div class="review">
-⭐⭐⭐⭐⭐<br>
-"Great facilities, delicious food and helpful staff."
-</div>
-<div class="review">
-⭐⭐⭐⭐⭐<br>
-"Best place in Jaipur for family fun and events."
-</div>
+<div class="review">⭐⭐⭐⭐⭐<br>“Water rides were thrilling and wave pool was awesome.”</div>
+<div class="review">⭐⭐⭐⭐⭐<br>“Great facilities, delicious food and helpful staff.”</div>
+<div class="review">⭐⭐⭐⭐⭐<br>“Best place in Jaipur for family fun and events.”</div>
 </div>
 </section>
 
-<!-- CONTACT -->
 <section class="section" id="contact">
 <h2>Contact Us</h2>
-
 <div class="contact">
 <p><strong>Address:</strong> Opp Akshya Patra, Behind DMart, Jagatpura, Jaipur</p>
 <p><strong>Phone:</strong> 9773307993</p>
@@ -352,16 +339,16 @@ Separate Kitchen | 3 Rooms
 <div class="social-links">
 <a href="https://www.instagram.com/spraywaterpark" target="_blank">Instagram</a>
 <a href="https://wa.me/919773307993" target="_blank">WhatsApp</a>
-<a href="https://youtube.com/" target="_blank">YouTube</a>
 </div>
 
 <iframe src="https://maps.google.com/maps?q=Spray%20Water%20Park%20Jagatpura%20Jaipur&t=&z=15&ie=UTF8&iwloc=&output=embed"></iframe>
 </div>
 </section>
 
-
-<a href="https://spraywaterpark.vercel.app" target="_blank" class="book-now">BOOK NOW</a>
+<div class="float-container">
+<a href="https://spraywaterpark.vercel.app" target="_blank" class="float-btn book-float">B</a>
+<a href="https://wa.me/919773307993" target="_blank" class="float-btn whatsapp-float">W</a>
+</div>
 
 </body>
 </html>
-
