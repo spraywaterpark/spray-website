@@ -45,49 +45,76 @@ nav ul{display:flex;list-style:none;gap:20px;}
 nav ul li a{color:#ccc;font-size:14px;}
 nav ul li a:hover{color:var(--orange);}
 
-/* HERO */
+/* HERO SECTION WITH VIDEO */
 .hero{
-min-height:100vh;
-background:url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e') center/cover no-repeat;
-display:flex;align-items:center;justify-content:center;
-text-align:center;position:relative;padding:20px;
+position:relative;
+height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+overflow:hidden;
 }
-.hero::after{
-content:"";
+
+.hero-video{
 position:absolute;
-width:100%;height:100%;
-background:rgba(0,0,0,0.75);
+top:0;
+left:0;
+width:100%;
+height:100%;
+object-fit:cover;
+z-index:1;
 }
+
+.hero-overlay{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.65);
+z-index:2;
+}
+
 .hero-content{
-position:relative;z-index:2;
-background:rgba(255,255,255,0.05);
-padding:45px 25px;
+position:relative;
+z-index:3;
+background:rgba(0,0,0,0.4);
+padding:40px 30px;
 border-radius:20px;
-max-width:700px;
-backdrop-filter:blur(10px);
+backdrop-filter:blur(8px);
+max-width:800px;
 }
-.hero h1{font-size:34px;margin-bottom:20px;}
+
+.hero h1{
+font-size:48px;
+margin-bottom:20px;
+}
+
 .offer{
-background:var(--orange);
-padding:8px 22px;
+background:#ff6a00;
+padding:10px 25px;
 border-radius:30px;
 display:inline-block;
 margin-bottom:20px;
-font-size:13px;
+font-size:14px;
 font-weight:600;
 }
+
 .hero-btn{
-border:2px solid var(--orange);
-color:var(--orange);
+border:2px solid #ff6a00;
+color:#ff6a00;
 padding:12px 25px;
 border-radius:30px;
 font-weight:600;
 transition:0.3s;
 }
+
 .hero-btn:hover{
-background:var(--orange);
+background:#ff6a00;
 color:#000;
 }
+
 
 /* SECTION */
 .section{
@@ -278,12 +305,24 @@ transform:scale(1.05);
 </nav>
 
 <section class="hero">
-<div class="hero-content">
-<h1>Spray Water Park & Resort Jaipur</h1>
-<div class="offer">FREE FOOD + UPTO 20% DISCOUNT</div>
-<a href="https://spraywaterpark.vercel.app" target="_blank" class="hero-btn">Book Now</a>
-</div>
+  
+  <!-- Background Video -->
+  <video autoplay muted loop playsinline class="hero-video">
+    <source src="images/video1.mp4" type="video/mp4">
+  </video>
+
+  <!-- Dark Overlay -->
+  <div class="hero-overlay"></div>
+
+  <!-- Hero Content -->
+  <div class="hero-content">
+    <h1>Spray Water Park & Resort Jaipur</h1>
+    <div class="offer">FREE FOOD + UPTO 20% DISCOUNT</div>
+    <a href="https://spraywaterpark.vercel.app" target="_blank" class="hero-btn">Book Now</a>
+  </div>
+
 </section>
+
 
 <section class="section" id="gallery">
 <h2>Our Gallery</h2>
@@ -359,4 +398,5 @@ CHAT NOW
 
 </body>
 </html>
+
 
