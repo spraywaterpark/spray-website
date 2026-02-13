@@ -196,26 +196,59 @@ color:var(--orange);
 margin-bottom:12px;
 }
 
-/* REVIEWS */
-.reviews{
-display:flex;
-flex-wrap:wrap;
-gap:25px;
-justify-content:center;
-max-width:1100px;
-margin:auto;
+
+
+
+
+/* TRUST SECTION */
+.trust-box{
+    max-width:1000px;
+    margin:auto;
 }
-.review{
-background:#111;
-padding:25px;
-border-radius:15px;
-width:320px;
-text-align:center;
-transition:0.3s;
+
+.trust-rating h3{
+    font-size:32px;
+    color:var(--orange);
+    margin-bottom:10px;
 }
-.review:hover{
-transform:translateY(-6px);
+
+.review-btn{
+    display:inline-block;
+    margin-top:15px;
+    padding:10px 20px;
+    background:var(--orange);
+    color:#000;
+    border-radius:30px;
+    font-weight:600;
 }
+
+.review-cards{
+    margin-top:40px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:20px;
+    justify-content:center;
+}
+
+.review-card{
+    background:#111;
+    padding:20px;
+    border-radius:15px;
+    width:300px;
+    font-size:14px;
+    color:#ddd;
+    box-shadow:0 0 15px rgba(0,0,0,0.4);
+}
+
+.review-card span{
+    display:block;
+    margin-top:15px;
+    color:var(--orange);
+    font-weight:600;
+}
+
+
+
 
 /* CONTACT */
 .contact{
@@ -361,14 +394,42 @@ Separate Kitchen | 3 Rooms
 </div>
 </section>
 
+
+<!-- GOOGLE REVIEWS TRUST SECTION -->
 <section class="section" id="reviews">
-<h2>Google Reviews (4.5 ⭐)</h2>
-<div class="reviews">
-<div class="review">⭐⭐⭐⭐⭐<br>“Water rides were thrilling and wave pool was awesome.”</div>
-<div class="review">⭐⭐⭐⭐⭐<br>“Great facilities, delicious food and helpful staff.”</div>
-<div class="review">⭐⭐⭐⭐⭐<br>“Best place in Jaipur for family fun and events.”</div>
+<h2>What Our Guests Say</h2>
+
+<div class="trust-box">
+    <div class="trust-rating">
+        <h3>4.5 ★★★★★</h3>
+        <p>Based on 1663+ Google Reviews</p>
+        <a href="https://maps.app.goo.gl/ai6M1QoupXfmjvNL7" target="_blank" class="review-btn">
+            Write a Review
+        </a>
+    </div>
+
+    <div class="review-cards">
+        <div class="review-card">
+            <p>"Water rides were thrilling, wave pool was awesome. Staff was courteous and food was amazing!"</p>
+            <span>- Abhi Sharma</span>
+        </div>
+
+        <div class="review-card">
+            <p>"One of my favourite destinations in Jaipur. Indoor & outdoor space perfect for events."</p>
+            <span>- Reema Gupta</span>
+        </div>
+
+        <div class="review-card">
+            <p>"Very enjoyable experience, good facilities and friendly staff. Rated 5 out of 5."</p>
+            <span>- Mohd. Parvej</span>
+        </div>
+    </div>
 </div>
 </section>
+
+
+
+
 
 <section class="section" id="contact">
 <h2>Contact Us</h2>
@@ -398,6 +459,7 @@ CHAT NOW
 
 </body>
 </html>
+
 
 
 
