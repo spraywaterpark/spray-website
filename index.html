@@ -218,47 +218,49 @@ border-radius:15px;
 margin-top:20px;
 }
 
-/* FLOATING BUTTONS */
-.float-container{
+/* SIDE STICK BUTTONS */
+.side-buttons{
 position:fixed;
-bottom:20px;
-right:20px;
+right:0;
+top:50%;
+transform:translateY(-50%);
 display:flex;
 flex-direction:column;
-gap:15px;
-z-index:1000;
+z-index:999;
 }
 
-.float-btn{
-width:60px;
-height:60px;
-border-radius:50%;
-display:flex;
-align-items:center;
-justify-content:center;
-color:#fff;
-font-size:22px;
+.side-btn{
+padding:14px 20px;
+writing-mode:vertical-rl;
+text-orientation:mixed;
 font-weight:700;
-box-shadow:0 8px 20px rgba(0,0,0,0.4);
+letter-spacing:1px;
+border-radius:10px 0 0 10px;
+margin-bottom:10px;
 transition:0.3s;
+box-shadow:0 5px 20px rgba(0,0,0,0.4);
 }
 
-.book-float{
-background:var(--orange);
+.book-side{
+background:#ff6a00;
 color:#000;
 }
 
-.whatsapp-float{
-background:var(--green);
+.chat-side{
+background:#25d366;
+color:#fff;
 }
 
-.float-btn:hover{
-transform:scale(1.1);
+.side-btn:hover{
+transform:scale(1.05);
 }
 
-@media(min-width:769px){
-.hero h1{font-size:50px;}
-}
+
+
+
+  
+
+  
 </style>
 </head>
 
@@ -345,10 +347,16 @@ Separate Kitchen | 3 Rooms
 </div>
 </section>
 
-<div class="float-container">
-<a href="https://spraywaterpark.vercel.app" target="_blank" class="float-btn book-float">B</a>
-<a href="https://wa.me/919773307993" target="_blank" class="float-btn whatsapp-float">W</a>
+<div class="side-buttons">
+<a href="https://spraywaterpark.vercel.app" target="_blank" class="side-btn book-side">
+BOOK NOW
+</a>
+
+<a href="https://wa.me/919773307993" target="_blank" class="side-btn chat-side">
+CHAT NOW
+</a>
 </div>
 
 </body>
 </html>
+
