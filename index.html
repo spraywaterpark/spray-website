@@ -8,6 +8,10 @@
 <meta name="description" content="Spray Water Park Jaipur – Water rides, wave pool, banquet hall (300 capacity), party lawn (1500 capacity). Free Food & Up to 20% Discount.">
 
 <link rel="icon" href="images/logo.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
 <style>
@@ -20,12 +24,16 @@
 }
 
 *{margin:0;padding:0;box-sizing:border-box;}
+
 body{
 font-family:'Poppins',sans-serif;
 background:var(--black);
 color:#fff;
 overflow-x:hidden;
+will-change: scroll-position;
 }
+
+    
 a{text-decoration:none;color:inherit;}
 img{max-width:100%;display:block}
 
@@ -369,9 +377,10 @@ transform:scale(1.05);
 <section class="hero">
   
   <!-- Background Video -->
-  <video autoplay muted loop playsinline class="hero-video">
+  <video autoplay muted loop playsinline class="hero-video" preload="metadata">
     <source src="images/hero.mp4" type="video/mp4">
   </video>
+
 
   <!-- Dark Overlay -->
   <div class="hero-overlay"></div>
@@ -389,10 +398,10 @@ transform:scale(1.05);
 <section class="section" id="gallery">
 <h2>Our Gallery</h2>
 <div class="gallery-grid">
-<img src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21">
-<img src="https://images.unsplash.com/photo-1504608524841-42fe6f032b4b">
-<img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e">
-<img src="https://images.unsplash.com/photo-1492724441997-5dc865305da7">
+<img src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21" loading="lazy" alt="Spray Water Park Jaipur">
+<img src="https://images.unsplash.com/photo-1504608524841-42fe6f032b4b" loading="lazy" alt="Spray Water Park Jaipur">
+<img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e" loading="lazy" alt="Spray Water Park Jaipur">
+<img src="https://images.unsplash.com/photo-1492724441997-5dc865305da7" loading="lazy" alt="Spray Water Park Jaipur">
 </div>
 </section>
 
@@ -493,6 +502,7 @@ CHAT NOW
 
 </body>
 </html>
+
 
 
 
