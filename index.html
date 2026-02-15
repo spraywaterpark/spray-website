@@ -417,8 +417,16 @@ margin-right:auto;
   <div class="hero-content">
     <h1>Spray Water Park & Resort Jaipur</h1>
     <div class="offer">FREE FOOD + UPTO 20% DISCOUNT</div>
-    <a href="https://spraywaterpark.vercel.app" target="_blank" class="hero-btn">Book Now</a>
-
+   
+   <a href="https://spraywaterpark.vercel.app" 
+   target="_blank" 
+   class="hero-btn"
+   onclick="gtag('event', 'book_now_click', {
+   event_category: 'engagement',
+   event_label: 'Hero Book Now'
+   });">
+   Book Now
+   </a>
 
 
 
@@ -551,14 +559,38 @@ for gatherings up to 1500 guests.
 <h2>Contact Us</h2>
 <div class="contact">
 <p><strong>Address:</strong> Goner Road, Opp Akshya Patra, Behind DMart, Jagatpura, Jaipur</p>
-<p><strong>Phone:</strong> 9773307993</p>
+<p><strong>Phone:</strong> 
+
+
+  
+<a href="tel:9773307993"
+   onclick="gtag('event', 'call_click', {
+     event_category: 'engagement',
+     event_label: 'Phone Call'
+   });">
+9773307993
+</a>
+
+
+  
+</p>
 <p><strong>Email:</strong> spraywaterpark@gmail.com</p>
     
 <p>Serving Jaipur, Jagatpura and nearby areas for water park fun and events.</p>
 
 <div class="social-links">
 <a href="https://www.instagram.com/spraywaterpark" target="_blank">Instagram</a>
-<a href="https://wa.me/919773307993" target="_blank">WhatsApp</a>
+
+<a href="https://wa.me/919773307993" 
+   target="_blank"
+   onclick="gtag('event', 'whatsapp_click', {
+     event_category: 'engagement',
+     event_label: 'WhatsApp Button'
+   });">
+Chat Now
+</a>
+
+  
 </div>
 
 <iframe src="https://maps.google.com/maps?q=Spray%20Water%20Park%20Jagatpura%20Jaipur&t=&z=15&ie=UTF8&iwloc=&output=embed"></iframe>
@@ -584,6 +616,7 @@ CHAT NOW
 
 </body>
 </html>
+
 
 
 
