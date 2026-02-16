@@ -486,6 +486,73 @@ margin-left:auto;
 margin-right:auto;
 }
 
+
+
+
+
+
+.faq-section {
+  padding: 60px 20px;
+  background: #111;
+  color: #fff;
+  max-width: 900px;
+  margin: auto;
+}
+
+.faq-section h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 32px;
+}
+
+.faq-item {
+  margin-bottom: 15px;
+  border-bottom: 1px solid #333;
+}
+
+.faq-question {
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 18px;
+  padding: 15px;
+  cursor: pointer;
+  position: relative;
+}
+
+.faq-question::after {
+  content: "+";
+  position: absolute;
+  right: 20px;
+  font-size: 22px;
+}
+
+.faq-question.active::after {
+  content: "-";
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+  padding: 0 15px;
+}
+
+.faq-answer p {
+  padding: 10px 0 20px;
+  color: #ccc;
+}
+
+
+
+
+
+
+
+
+  
   
 </style>
 
@@ -721,47 +788,62 @@ CHAT NOW
 
 
 
+  
+<section class="faq-section">
+  <h2>Frequently Asked Questions</h2>
 
-<section id="faq" style="padding:60px 20px; background:#111; color:#fff;">
-  <div style="max-width:900px; margin:auto;">
-    <h2 style="text-align:center; margin-bottom:40px;">Frequently Asked Questions</h2>
-
-    <div>
-      <h3>What is the ticket price of Spray Water Park Jaipur?</h3>
-      <p>Ticket price starts from ₹299 onwards depending on weekday or weekend. Special discounts are available for group and corporate bookings.</p>
-
-      <h3>Is food included in the ticket?</h3>
-      <p>Yes, free food is included in selected packages. Hygienic and family-friendly food options are available inside the park.</p>
-
-      <h3>Where is Spray Water Park located?</h3>
-      <p>Spray Water Park is located in Jagatpura, Jaipur near Mouja Ri Dhani. Easily accessible from Malviya Nagar and Sanganer.</p>
-
-      <h3>What are the opening timings?</h3>
-      <p>The park is open from 10:00 AM to 6:00 PM. Timings may vary during special events.</p>
-
-      <h3>Is the water park safe for kids and families?</h3>
-      <p>Yes, certified lifeguards are available at all pools and slides to ensure complete safety.</p>
-
-      <h3>Do you allow birthday parties and corporate events?</h3>
-      <p>Yes, we offer banquet hall (300 capacity) and party lawn (1500 capacity) for birthdays, school trips and corporate events.</p>
-
-      <h3>Is outside food allowed?</h3>
-      <p>No, outside food is not allowed. Food is available inside the park.</p>
-
-      <h3>Is parking available?</h3>
-      <p>Yes, free and secure parking facility is available for all visitors.</p>
-
-      <h3>How can I book tickets?</h3>
-      <p>You can book tickets directly through our website or contact us via WhatsApp or call for group bookings.</p>
+  <div class="faq-item">
+    <button class="faq-question">What are the ticket prices of Spray Water Park Jaipur?</button>
+    <div class="faq-answer">
+      <p>Ticket prices vary by weekday and weekend. Please visit our Pricing section or call us at +91 9773307993 for latest offers and group discounts.</p>
     </div>
   </div>
+
+  <div class="faq-item">
+    <button class="faq-question">Is outside food allowed in the water park?</button>
+    <div class="faq-answer">
+      <p>No, outside food is not allowed. However, free food is included in selected packages and we have an in-house restaurant.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question">Is Spray Water Park safe for kids and families?</button>
+    <div class="faq-answer">
+      <p>Yes, lifeguards are available at all pools and safety measures are strictly followed to ensure a secure environment.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question">Do you provide space for birthday and corporate events?</button>
+    <div class="faq-answer">
+      <p>Yes, we offer banquet hall (300 capacity) and party lawn (1500 capacity) for birthdays, school trips and corporate events.</p>
+    </div>
+  </div>
+
 </section>
 
+<script>
+document.querySelectorAll(".faq-question").forEach(button => {
+  button.addEventListener("click", () => {
+    const answer = button.nextElementSibling;
+    button.classList.toggle("active");
 
+    if (answer.style.maxHeight) {
+      answer.style.maxHeight = null;
+    } else {
+      answer.style.maxHeight = answer.scrollHeight + "px";
+    }
+  });
+});
+</script>
+
+
+  
 
   
 </body>
 </html>
+
 
 
 
