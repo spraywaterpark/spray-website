@@ -602,25 +602,30 @@ margin-right:auto;
 
 
 /* MOBILE FIX START */
+
+
+
+  /* MOBILE SIDE BUTTON SIZE FIX */
 @media (max-width: 768px) {
 
-nav {
-  padding: 10px 12px;
+.book-now,
+.chat-now {
+  padding: 10px 8px;   /* height + width kam */
+  font-size: 12px;     /* text size chhota */
+  border-radius: 8px 0 0 8px;
 }
 
-nav img {
-  height: 40px;
-  margin-right: 10px;
+.book-now {
+  top: 45%;   /* thoda adjust */
 }
 
-nav ul {
-  gap: 12px;
+.chat-now {
+  top: 58%;
 }
 
-nav ul li a {
-  font-size: 13px;
 }
 
+  
 /* TABLE FIX */
 table td, table th {
   font-size: 14px;
@@ -929,6 +934,7 @@ CHAT NOW
   
 </body>
 </html>
+
 
 
 
