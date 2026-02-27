@@ -591,11 +591,6 @@ margin-right:auto;
   top: 55%;
 }
 
-
-
-
-
-
   
 /* Hover Effect */
 .book-now:hover,
@@ -604,6 +599,51 @@ margin-right:auto;
   box-shadow: 0 6px 20px rgba(0,0,0,0.6);
 }
 
+
+
+/* MOBILE FIX START */
+@media (max-width: 768px) {
+
+nav {
+  padding: 10px 12px;
+}
+
+nav img {
+  height: 40px;
+  margin-right: 10px;
+}
+
+nav ul {
+  gap: 12px;
+}
+
+nav ul li a {
+  font-size: 13px;
+}
+
+/* TABLE FIX */
+table td, table th {
+  font-size: 14px;
+  padding: 8px;
+}
+
+td:last-child {
+  white-space: nowrap;
+}
+
+/* HERO FIX */
+.hero h1 {
+  font-size: 32px;
+}
+
+.hero-content {
+  padding: 25px 20px;
+}
+
+}
+/* MOBILE FIX END */
+
+  
   
 </style>
 
@@ -889,6 +929,7 @@ CHAT NOW
   
 </body>
 </html>
+
 
 
 
